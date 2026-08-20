@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+/* navbar style  */
+
+/* Header */
+header {
+  width: 100%;
+  background: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Navbar */
+.navbar {
+  max-width: 1400px;
+  height: 95px;
+  margin: auto;
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo h1 {
+  font-family: Georgia, serif;
+  color: #17344f;
+}
+
+/* Menu */
+
+.menu {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding-left: 20px;
+  color: rgb(0, 45, 64);
+}
+
+.menu li {
+  font-size: 12px;
+   font-family: "Poppins", sans-serif;
+   font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  color: #a78445;
+}
+
+/* Right Side */
+
+.right-side {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 45, 64);
+}
+.right-side button,.location{
+
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+.location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  height: 50px;
+
+  border: 1px solid #ddd;
+}
+
+.pickup,
+.delivery {
+  height: 50px;
+  padding: 0 30px;
+
+  border: 1px solid #ddd;
+  border-left: none;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.pickup:hover,
+.delivery:hover {
+  background: #9C7942;
+  color: #fff;
+}
+
+.book-btn {
+  height: 50px;
+
+  padding: 0 30px;
+
+  border: none;
+
+  background: #a78445;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #8d6c37;
+}
+
+/* Mobile */
+
+.menu-btn {
+  display: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+
+  .right-side {
+    display: none;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+}
+
+@media (max-width:768px){
+
+
+}
