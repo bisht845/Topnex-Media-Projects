@@ -1,8 +1,9 @@
 import React from "react";
+import Home from "./Home";
 
 const Carrer = () =>{
     return(
-        <div>Carrer</div>
+        <div><Home/></div>
     )
 }
 

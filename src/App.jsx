@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Topnex-Media-Projects">
           <Routes>
               <Route path='/' element={<Layout />}>
                   <Route index element={<Home />} />
