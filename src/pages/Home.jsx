@@ -1,496 +1,464 @@
-import React, { useState } from "react";
-import "../../src/index.css"
-import HeroImg from "../../src/assets/Hero_img.jpg"
-import catImg1 from "../assets/cat-img1.jpeg"
-import catImg2 from "../assets/cat-img2.jpeg"
-import Kitchen_Garnish from "../assets/Kitchen_Garnish_.jpg"
-import Service_1 from "../assets/Service-1.jpg"
-import Service_2 from "../assets/Service-2.jpg"
-import HeadOfficeImg from "../assets/edit_Earls_.jpg"
+import React from "react";
+import { Link } from "react-router-dom";
+
+import HeroImg from "../assets/Hero_img.jpg";
+import catImg1 from "../assets/cat-img1.jpeg";
+import catImg2 from "../assets/cat-img2.jpeg";
+import Kitchen_Garnish from "../assets/Kitchen_Garnish_.jpg";
+import Service_1 from "../assets/Service-1.jpg";
+import Service_2 from "../assets/Service-2.jpg";
+
+const popularItems = [
+  {
+    name: "Chilli Paneer",
+    price: "₹269",
+    description: "Crispy paneer tossed with chilli, peppers and our signature sauce.",
+    image: catImg1,
+  },
+  {
+    name: "Veg Manchurian",
+    price: "₹249",
+    description: "Crispy vegetable bites finished with a delicious Indo-Chinese glaze.",
+    image: catImg2,
+  },
+  {
+    name: "Veg Fried Rice",
+    price: "₹199",
+    description: "Aromatic rice wok-tossed with fresh vegetables and bold flavours.",
+    image: Kitchen_Garnish,
+  },
+  {
+    name: "Honey Chilli Potato",
+    price: "₹239",
+    description: "Crispy golden potatoes coated with sweet honey and spicy chilli.",
+    image: Service_1,
+  },
+];
+
 const Home = () => {
-    const serviceRoles = [
-        {
-            title: "Host",
-            description:
-                "You champion and set the tone for the Earls experience by being the first person to welcome our guests. You play an important role by ensuring a steady flow into the restaurant so the service and culinary teams can deliver the best guest experience.",
-        },
-        {
-            title: "Setter",
-            description:
-                "Setters help create an exceptional guest experience by preparing the restaurant and ensuring everything is ready for service.",
-        },
-        {
-            title: "Server",
-            description:
-                "Servers create memorable experiences for guests by providing excellent service, understanding their needs, and making every visit special.",
-        },
-        {
-            title: "Bartender",
-            description:
-                "Bartenders create great guest experiences through excellent drinks, service, and knowledge of the restaurant.",
-        },
-        {
-            title: "Service Management",
-            description:
-                "Service managers lead and support the service team while creating an environment where both guests and team members can thrive.",
-        },
-    ];
+  return (
+    <main className="min-h-screen bg-[#071412] text-white">
 
-    const culinaryRoles = [
-        {
-            title: "Recruit",
-            description:
-                "Recruit team members who bring passion, energy, and a commitment to creating an exceptional guest experience.",
-        },
-        {
-            title: "Line Team",
-            description:
-                "The line team works together to prepare high-quality food while maintaining consistency, speed, and excellent kitchen standards.",
-        },
-        {
-            title: "Prep Team",
-            description:
-                "The prep team ensures ingredients are prepared properly and efficiently so the kitchen is ready for service.",
-        },
-        {
-            title: "Culinary Management",
-            description:
-                "Culinary management leads the kitchen team, maintains high standards, and helps develop future culinary leaders.",
-        },
-    ];
-
-
-    const [openRole, setOpenRole] = useState(null)
-    const toggleRole = (role) => {
-        setOpenRole(openRole === role ? null : role)
-    }
-
-    return (
-        <>
-<section
-    className="hero-section flex h-[500px] w-full items-center justify-center bg-cover bg-center mb-[10px] sm:h-[550px] md:h-[600px] lg:h-screen"
-    style={{ backgroundImage: `url(${HeroImg})` }}
->
-    <div className="text px-5 text-center sm:px-8">
-        <p className="first">THE EARLS EXPERIENCE</p>
-        <strong>Love What you do.</strong>
-        <p>Grow into your best self</p>
-    </div>
-</section>
-
-
-<section className="px-5 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-5 lg:py-16">
-
-    {/* Heading */}
-    <div className="text-sec flex flex-col items-center justify-center text-center">
-
-        <p className="text-base sm:text-lg">
-            JOIN THE TEAM
-        </p>
-
-        <strong className="mt-3 text-4xl leading-tight sm:text-5xl md:text-6xl">
-            Why Choose Earls?
-        </strong>
-
-    </div>
-
-
-    {/* Category Cards */}
-    <div className="mt-12 grid grid-cols-1 gap-10 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:mt-20 lg:grid-cols-2 lg:gap-6">
-
-        {/* Card 1 */}
-        <div className="min-w-0">
-
-            <img
-                src={catImg1}
-                alt="Make Life Awesome"
-                className="block h-[400px] w-full object-cover sm:h-[350px] md:h-[400px] lg:h-[450px]"
-            />
-
-            <div className="text-div mt-6">
-
-                <strong className="block text-3xl leading-tight sm:text-3xl lg:text-2xl">
-                    Make Life Awesome
-                </strong>
-
-                <p className="mt-3 text-base leading-7">
-                    We believe in people living large, purposeful lives filled with fun. That means leading with purpose, creating connections, and growing into the best version of yourself.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        {/* Card 2 */}
-        <div className="min-w-0">
-
-            <img
-                src={catImg2}
-                alt="Empowerment"
-                className="block h-[400px] w-full object-cover sm:h-[350px] md:h-[400px] lg:h-[450px]"
-            />
-
-            <div className="text-div mt-6">
-
-                <strong className="block text-3xl leading-tight sm:text-3xl lg:text-2xl">
-                    Empowerment
-                </strong>
-
-                <p className="mt-3 text-base leading-7">
-                    Every Earls partner is empowered to make decisions that positively impact the guest and partner experiences. We encourage bold moves that let you live into your purpose.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        {/* Card 3 */}
-        <div className="min-w-0">
-
-            <img
-                src={catImg2}
-                alt="People Grow Here"
-                className="block h-[400px] w-full object-cover sm:h-[350px] md:h-[400px] lg:h-[450px]"
-            />
-
-            <div className="text-div mt-6">
-
-                <strong className="block text-3xl leading-tight sm:text-3xl lg:text-2xl">
-                    People Grow Here
-                </strong>
-
-                <p className="mt-3 text-base leading-7">
-                    Your growth and development is our priority. From line cook to floor manager to marketing specialist, we're committed to helping everyone live into their full potential.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        {/* Card 4 */}
-        <div className="min-w-0">
-
-            <img
-                src={catImg1}
-                alt="Connection"
-                className="block h-[400px] w-full object-cover sm:h-[350px] md:h-[400px] lg:h-[450px]"
-            />
-
-            <div className="text-div mt-6">
-
-                <strong className="block text-3xl leading-tight sm:text-3xl lg:text-2xl">
-                    Connection
-                </strong>
-
-                <p className="mt-3 text-base leading-7">
-                    There's more to life than work! Our various programs within our Employee Resource Groups help provide connection and guidance to lead a life you love.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section className="mb-16 bg-[#3D5B58] py-12 sm:py-16 md:py-20 lg:mb-24 lg:py-24">
-
-    <div className="mx-auto max-w-[700px] px-5 text-center sm:px-8">
-        <p className="uppercase tracking-wide text-sm text-gray-300">
-            THE EARLS WAY
-        </p>
-
-        <h2 className="mt-5 text-3xl font-serif font-normal leading-tight text-white sm:text-4xl">
-            We believe in people living large
-            <br className="hidden sm:block" />
-            purposeful lives, filled with fun.
-        </h2>
-    </div>
-
-
-    <div className="mx-auto mt-12 max-w-[1200px] px-5 sm:mt-16 sm:px-8 lg:mt-20">
+      <section className="relative min-h-[650px] overflow-hidden sm:min-h-[700px] lg:min-h-[calc(100vh-100px)]">
 
         <img
-            src={Kitchen_Garnish}
-            alt="Kitchen_Garnish"
-            className="h-[300px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[600px]"
+          src={HeroImg}
+          alt="NACHO-G food"
+          className="absolute inset-0 h-full w-full object-cover"
         />
 
+        <div className="absolute inset-0 bg-[#071412]/60" />
 
-        <div className="inside-earls mt-12 flex flex-col gap-10 sm:mt-16 md:mt-20 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#071412] via-transparent to-black/50" />
 
-            <div className="max-w-[450px]">
-                <p className="uppercase tracking-wide text-xl font-medium text-gray-300">
-                    Inside Earls
-                </p>
+        <div className="relative z-10 flex min-h-[650px] items-center justify-center px-5 text-center sm:min-h-[700px] lg:min-h-[calc(100vh-100px)]">
 
-                <h2 className="mt-3 text-3xl font-serif font-normal leading-tight text-white sm:text-4xl">
-                    What it's like to work at Earls
-                </h2>
+          <div className="max-w-4xl">
+
+            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-[#D7AE4D] sm:text-sm">
+              NACHO G · THE DINING SPACE
+            </p>
+
+            <h1 className="font-serif text-5xl uppercase leading-[0.] tracking-wide sm:text-2xl md:text-2xl lg:text-[50px]">
+              Good Food.
+              <br />
+              Great Mood.
+            </h1>
+
+            <div className="mx-auto my-7 h-px w-20 bg-[#D7AE4D] sm:my-8 sm:w-28" />
+
+            <p className="mx-auto max-w-xl font-serif text-lg italic leading-7 text-[#E8D29A] sm:text-2xl sm:leading-9">
+              Bold flavours, fresh ingredients and unforgettable
+              moments — all served at NACHO-G.
+            </p>
+
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+
+              <Link
+                to="/menu"
+                className="border border-[#D7AE4D] bg-[#D7AE4D] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-black transition duration-300 hover:bg-transparent hover:text-[#D7AE4D]"
+              >
+                Explore Menu
+              </Link>
+
+              <button
+                className="border border-white/70 px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition duration-300 hover:border-[#D7AE4D] hover:text-[#D7AE4D]"
+              >
+                Order Now
+              </button>
+
             </div>
 
-
-            <div className="max-w-[500px]">
-                <p className="text-base leading-8 text-white sm:text-lg sm:leading-9">
-                    We believe in the gifts of being present, providing non-judgmental
-                    feedback, catching people doing the right thing and creating
-                    empowerment by asking questions to build trust, cohesiveness and
-                    commitment.
-                </p>
-            </div>
+          </div>
 
         </div>
-    </div>
 
-</section>
+      </section>
 
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
 
-<section className="roles-section mb-15">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
 
-    <div className="roles-heading flex flex-col items-center justify-center px-5 text-center">
-        <p className="uppercase text-[16px] font-medium tracking-wide">
-            Explore opportunities
-        </p>
+          <div>
 
-        <h2 className="mt-4 text-3xl font-serif font-normal sm:text-4xl">
-            Roles + Department
-        </h2>
-    </div>
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#D7AE4D]">
+              Welcome To NACHO-G
+            </p>
 
+            <h2 className="font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Where every bite
+              <br />
+              tells a story.
+            </h2>
 
-    <div className="roles-container mt-10 grid grid-cols-1 gap-8 px-5 sm:mt-12 sm:px-8 lg:mt-16 lg:grid-cols-2 lg:px-6">
+            <div className="my-6 h-px w-20 bg-[#D7AE4D]" />
 
-        {/* Service */}
-        <div className="roles-card bg-[#EAE8DE]">
+            <p className="max-w-xl text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
+              At NACHO-G, we believe great food brings people together.
+              From comforting classics to exciting flavours, every dish is
+              prepared with fresh ingredients, passion and a little bit of
+              creativity.
+            </p>
 
-            <div className="role-image">
-                <img
-                    src={Service_1}
-                    alt="Service card"
-                    className="h-[300px] w-full object-cover sm:h-[400px] lg:h-[430px]"
-                />
-            </div>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
+              Come hungry. Leave happy. That's the NACHO-G way.
+            </p>
 
+            <Link
+              to="/about"
+              className="mt-7 inline-block border-b border-[#D7AE4D] pb-2 text-sm font-semibold uppercase tracking-wider text-[#D7AE4D] transition hover:text-white"
+            >
+              Discover Our Story →
+            </Link>
 
-            <div className="role-content px-6 py-8 text-center sm:px-10 sm:py-10">
-
-                <h2 className="text-3xl font-serif font-normal text-[#003b52] sm:text-4xl">
-                    Service
-                </h2>
-
-                <p className="mt-5 text-base leading-7 text-[#003b52]">
-                    Start a successful hospitality career here, where our intensive in-house training teaches you how to lead your teams and deliver exceptional service to our guests.
-                </p>
-
-            </div>
+          </div>
 
 
-            <div className="roles-list px-6 pb-12 sm:px-8 sm:pb-16">
+          <div className="relative">
 
-                {serviceRoles.map((role) => (
-                    <div
-                        key={role.title}
-                        className="border-t border-[#28566a]"
-                    >
-                        <button
-                            className="flex w-full items-center justify-between py-4"
-                            onClick={() => toggleRole(role.title)}
-                        >
-                            <span className="text-lg font-semibold text-[#003b52] sm:text-xl">
-                                {role.title}
-                            </span>
+            <img
+              src="https://images.openai.com/static-rsc-4/mTz33giur_yFnQnOOYeyRTGlCCnQbG36HCbm0i2Pgls8A1Mn8Lgr2KMWBw9p5BBfM4h5OkkehP4Y6o6FPy0Yk5tY-zSjyVrB9DuB_TF0_bpBlWa4NN26BI0z2LnG1UvaMfb4hC2QpJbRqc7kn56Nml_ZPVtwOjI0ebsolxBhYv0Anvpjk3AC9umHYtB2vXKa?purpose=fullsize"
+              alt="Delicious NACHO-G food"
+              className="h-[400px] w-full object-cover sm:h-[500px] lg:h-[560px]"
+            />
 
-                            <span className="text-2xl font-light text-[#003b4d]">
-                                {openRole === role.title ? "-" : "+"}
-                            </span>
-                        </button>
+            <div className="absolute -bottom-5 -left-5 hidden border border-[#D7AE4D]/50 bg-[#0B1C19] px-6 py-5 sm:block">
 
-                        {openRole === role.title && (
-                            <div className="pb-7 pr-5 sm:pr-10">
-                                <p className="text-[16px] leading-relaxed text-[#28566a]">
-                                    {role.description}
-                                </p>
-                            </div>
-                        )}
-                    </div>
-                ))}
+              <p className="text-xs uppercase tracking-[0.25em] text-[#D7AE4D]">
+                Made With
+              </p>
+
+              <p className="mt-1 font-serif text-xl">
+                Passion & Love
+              </p>
 
             </div>
+
+          </div>
+
         </div>
 
+      </section>
 
-        {/* Culinary */}
-        <div className="roles-card bg-[#EAE8DE]">
+      <section className="bg-[#0B1C19] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
 
-            <div className="role-image">
-                <img
-                    src={Service_2}
-                    alt="Service card"
-                    className="h-[300px] w-full object-cover sm:h-[400px] lg:h-[430px]"
-                />
-            </div>
+        <div className="mx-auto max-w-7xl">
 
+          <div className="mb-12 text-center">
 
-            <div className="role-content px-6 py-8 text-center sm:px-10 sm:py-10">
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D7AE4D]">
+              Taste The Difference
+            </p>
 
-                <h2 className="text-3xl font-serif font-normal text-[#003b52] sm:text-4xl">
-                    Culinary
-                </h2>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl">
+              Our Favourites
+            </h2>
 
-                <p className="mt-5 text-base leading-7 text-[#003b52]">
-                    Our kitchen is the best place to grow your career as a chef. Our partners go through rigorous in-house training that sets them up to excel as a chef and a leader.
-                </p>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-white/60 sm:text-base">
+              A few of the dishes our guests keep coming back for.
+            </p>
 
-            </div>
+          </div>
 
 
-            <div className="roles-list px-6 pb-12 sm:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-                {culinaryRoles.map((role) => (
-                    <div
-                        key={role.title}
-                        className="border-t border-[#28566a]"
-                    >
-                        <button
-                            className="flex w-full items-center justify-between py-4"
-                            onClick={() => toggleRole(role.title)}
-                        >
-                            <span className="text-lg font-semibold text-[#003b52] sm:text-xl">
-                                {role.title}
-                            </span>
+            {popularItems.map((item) => (
 
-                            <span className="text-2xl font-light text-[#003b4d]">
-                                {openRole === role.title ? "-" : "+"}
-                            </span>
-                        </button>
+              <article
+                key={item.name}
+                className="group overflow-hidden border border-[#D7AE4D]/20 bg-[#071412] transition duration-500 hover:-translate-y-2 hover:border-[#D7AE4D]"
+              >
 
-                        {openRole === role.title && (
-                            <div className="pb-7 pr-5 sm:pr-10">
-                                <p className="text-[16px] leading-relaxed text-[#28566a]">
-                                    {role.description}
-                                </p>
-                            </div>
-                        )}
-                    </div>
-                ))}
+                <div className="aspect-[4/3] overflow-hidden">
 
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<section className="head-ofc-sec m-3 bg-[#EAE8DE] sm:m-5">
-
-    <div className="head-ofc-img">
-        <img
-            src={HeadOfficeImg}
-            alt=""
-            className="h-[250px] w-full object-cover sm:h-[350px] md:h-[400px]"
-        />
-    </div>
-
-
-    <div className="head-ofc-content flex flex-col items-center px-5 py-8 text-center sm:px-8">
-
-        <h2 className="text-3xl text-[#003b52]">
-            Head Office
-        </h2>
-
-        <p className="mt-4 text-base leading-7 text-[#003b52]">
-            Earls Head Office in Vancouver, BC provides the roadmap for all of our restaurants across North
-            <br className="hidden md:block" />
-            America. Everything you experience at your favourite Earls starts here.
-        </p>
-
-    </div>
-
-
-    <div className="mt-8 grid grid-cols-1 lg:grid-cols-2">
-
-        <div className="roles-list px-6 pb-12 sm:px-8 sm:pb-16">
-
-            {serviceRoles.map((role) => (
-                <div
-                    key={role.title}
-                    className="border-t border-[#28566a]"
-                >
-
-                    <button
-                        className="flex w-full items-center justify-between py-4"
-                        onClick={() => toggleRole(role.title)}
-                    >
-
-                        <span className="text-lg font-semibold text-[#003b52] sm:text-xl">
-                            {role.title}
-                        </span>
-
-                        <span className="text-2xl font-light text-[#003b4d]">
-                            {openRole === role.title ? "-" : "+"}
-                        </span>
-
-                    </button>
-
-                    {openRole === role.title && (
-                        <div className="pb-7 pr-5 sm:pr-10">
-                            <p className="text-[16px] leading-relaxed text-[#28566a]">
-                                {role.description}
-                            </p>
-                        </div>
-                    )}
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
 
                 </div>
-            ))}
-
-        </div>
 
 
-        <div className="roles-list px-6 pb-12 sm:px-8 sm:pb-16">
+                <div className="p-5">
 
-            {culinaryRoles.map((role) => (
-                <div
-                    key={role.title}
-                    className="border-t border-[#28566a]"
-                >
+                  <div className="flex items-start justify-between gap-3">
 
-                    <button
-                        className="flex w-full items-center justify-between py-4"
-                        onClick={() => toggleRole(role.title)}
-                    >
+                    <h3 className="font-serif text-xl">
+                      {item.name}
+                    </h3>
 
-                        <span className="text-lg font-semibold text-[#003b52] sm:text-xl">
-                            {role.title}
-                        </span>
+                    <span className="text-sm font-semibold text-[#D7AE4D]">
+                      {item.price}
+                    </span>
 
-                        <span className="text-2xl font-light text-[#003b4d]">
-                            {openRole === role.title ? "-" : "+"}
-                        </span>
+                  </div>
 
-                    </button>
+                  <div className="my-3 h-px bg-[#D7AE4D]/20" />
 
-                    {openRole === role.title && (
-                        <div className="pb-7 pr-5 sm:pr-10">
-                            <p className="text-[16px] leading-relaxed text-[#28566a]">
-                                {role.description}
-                            </p>
-                        </div>
-                    )}
+                  <p className="text-sm leading-6 text-white/50">
+                    {item.description}
+                  </p>
 
                 </div>
+
+              </article>
+
             ))}
+
+          </div>
+
+
+          <div className="mt-10 text-center">
+
+            <Link
+              to="/menu"
+              className="inline-block border border-[#D7AE4D] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#D7AE4D] transition duration-300 hover:bg-[#D7AE4D] hover:text-black"
+            >
+              View Full Menu
+            </Link>
+
+          </div>
 
         </div>
 
-    </div>
+      </section>
 
-</section>
-        </>
-    )
-}
-export default Home;    
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
+
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
+
+          <div className="order-2 lg:order-1">
+
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#D7AE4D]">
+              The NACHO-G Experience
+            </p>
+
+            <h2 className="font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Made fresh.
+              <br />
+              Served with heart.
+            </h2>
+
+            <div className="my-6 h-px w-20 bg-[#D7AE4D]" />
+
+            <p className="text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
+              Good food isn't just about what's on the plate. It's about
+              the people, the atmosphere and the memories you create around
+              the table.
+            </p>
+
+            <p className="mt-4 text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
+              That's why every NACHO-G experience is designed to feel
+              welcoming, relaxed and full of flavour.
+            </p>
+
+          </div>
+
+
+          <div className="order-1 lg:order-2">
+
+            <img
+              src={Kitchen_Garnish}
+              alt="Fresh food prepared at NACHO-G"
+              className="h-[400px] w-full object-cover sm:h-[500px] lg:h-[600px]"
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="border-y border-[#D7AE4D]/20 bg-[#0B1C19] px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="mb-12 text-center">
+
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D7AE4D]">
+              Why NACHO-G
+            </p>
+
+            <h2 className="font-serif text-4xl sm:text-5xl">
+              More than just a meal.
+            </h2>
+
+          </div>
+
+
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+            <div className="text-center">
+
+              <span className="font-serif text-4xl text-[#D7AE4D]">
+                01
+              </span>
+
+              <h3 className="mt-4 font-serif text-2xl">
+                Fresh Ingredients
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-white/50">
+                Quality ingredients carefully selected for every dish.
+              </p>
+
+            </div>
+
+
+            <div className="text-center">
+
+              <span className="font-serif text-4xl text-[#D7AE4D]">
+                02
+              </span>
+
+              <h3 className="mt-4 font-serif text-2xl">
+                Big Flavours
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-white/50">
+                Bold combinations created to make every bite memorable.
+              </p>
+
+            </div>
+
+
+            <div className="text-center">
+
+              <span className="font-serif text-4xl text-[#D7AE4D]">
+                03
+              </span>
+
+              <h3 className="mt-4 font-serif text-2xl">
+                Made Fresh
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-white/50">
+                Every order is prepared fresh so you get the best flavour.
+              </p>
+
+            </div>
+
+            <div className="text-center">
+
+              <span className="font-serif text-4xl text-[#D7AE4D]">
+                04
+              </span>
+
+              <h3 className="mt-4 font-serif text-2xl">
+                Good Times
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-white/50">
+                Great food tastes even better when shared with good people.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-28">
+
+        <div className="mx-auto max-w-7xl">
+
+          <div className="relative overflow-hidden">
+
+            <img
+              src={Service_2}
+              alt="NACHO-G dining experience"
+              className="h-[450px] w-full object-cover sm:h-[550px] lg:h-[650px]"
+            />
+
+            <div className="absolute inset-0 bg-black/50" />
+
+            <div className="absolute inset-0 flex items-center justify-center px-5 text-center">
+
+              <div className="max-w-3xl">
+
+                <p className="mb-5 text-sm uppercase tracking-[0.35em] text-[#D7AE4D]">
+                  Come Hungry
+                </p>
+
+                <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl">
+                  Bring Your People.
+                  <br />
+                  We'll Bring The Food.
+                </h2>
+
+                <Link
+                  to="/menu"
+                  className="mt-8 inline-block bg-[#D7AE4D] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-black transition hover:bg-white"
+                >
+                  Explore Menu
+                </Link>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="border-y border-[#D7AE4D]/20 bg-[#0B1C19] px-5 py-16 text-center sm:px-8 sm:py-20">
+
+        <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D7AE4D]">
+          Your Table Is Waiting
+        </p>
+
+        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl">
+          Ready to get loaded?
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-white/50 sm:text-base">
+          Gather your favourite people and make your next meal a
+          NACHO-G moment.
+        </p>
+
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+
+          <button className="bg-[#D7AE4D] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-black transition hover:bg-white">
+            Order Now
+          </button>
+
+          <button className="border border-[#D7AE4D] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#D7AE4D] transition hover:bg-[#D7AE4D] hover:text-black">
+            Book a Table
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+};
+
+export default Home;
+

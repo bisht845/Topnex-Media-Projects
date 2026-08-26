@@ -1,176 +1,417 @@
 import React from "react";
-import blogHero1 from "../assets/blogHero.jpg"
-import blogHero2 from "../assets/blogImg.jpg"
-import blogHero3 from "../assets/Service-1.jpg"
-import blogHero4 from "../assets/Service-2.jpg"
+import { Link } from "react-router-dom";
+import {
+    FaArrowRight,
+    FaCalendarAlt,
+    FaInstagram,
+    FaFacebookF,
+    FaYoutube,
+} from "react-icons/fa";
+
+import blogHero1 from "../assets/blogHero.jpg";
+import blogHero2 from "../assets/blogImg.jpg";
+import blogHero3 from "../assets/Service-1.jpg";
+import blogHero4 from "../assets/Service-2.jpg";
 
 const Blogs = () => {
+
     const BlogData = [
         {
             id: 1,
             date: "December 12, 2024",
+            category: "Our Story",
             image: blogHero1,
-            title: "Stan & the late Bus Fuller: Induction into the Business Laureates of BC Hall of Fame!",
-            discription: "We’re thrilled to announce that Stan Fuller and the late Bus Fuller, the incredible father-son duo behind Earls Kitchen + Bar, have been inducted into the prestigious Business Laureates of British Columbia Hall of Fame! Stan’s"
-
+            title: "The Story Behind NACHO-G",
+            description:
+                "Every restaurant has a story. NACHO-G was created with a simple idea — bring bold flavours, good people and great moments together under one roof.",
         },
+
         {
             id: 2,
-            date: "may 10, 2024",
+            date: "May 10, 2025",
+            category: "Food & Flavours",
             image: blogHero2,
-            title: "Stan & the late Bus Fuller: Induction into the Business Laureates of BC Hall of Fame!",
-            discription: "We’re thrilled to announce that Stan Fuller and the late Bus Fuller, the incredible father-son duo behind Earls Kitchen + Bar, have been inducted into the prestigious Business Laureates of British Columbia Hall of Fame! Stan’s"
-
+            title: "Good Food Starts With Good Ingredients",
+            description:
+                "Fresh ingredients, bold flavours and a little creativity are what make every NACHO-G dish special. Discover what goes behind the food you love.",
         },
+
         {
             id: 3,
-            date: "june 10, 2025",
+            date: "June 10, 2025",
+            category: "Experience",
             image: blogHero3,
-            title: "Stan & the late Bus Fuller: Induction into the Business Laureates of BC Hall of Fame!",
-            discription: "We’re thrilled to announce that Stan Fuller and the late Bus Fuller, the incredible father-son duo behind Earls Kitchen + Bar, have been inducted into the prestigious Business Laureates of British Columbia Hall of Fame! Stan’s"
-
+            title: "More Than Just A Meal",
+            description:
+                "At NACHO-G, dining is about more than what's on your plate. It's about music, conversations, laughter and moments worth remembering.",
         },
+
         {
             id: 4,
-            date: "april 12, 2025",
+            date: "April 12, 2025",
+            category: "Behind The Scenes",
             image: blogHero4,
-            title: "Stan & the late Bus Fuller: Induction into the Business Laureates of BC Hall of Fame!",
-            discription: "We’re thrilled to announce that Stan Fuller and the late Bus Fuller, the incredible father-son duo behind Earls Kitchen + Bar, have been inducted into the prestigious Business Laureates of British Columbia Hall of Fame! Stan’s"
-        }
-    ]
+            title: "Behind The NACHO-G Kitchen",
+            description:
+                "Step behind the scenes and meet the energy, passion and creativity that goes into making your NACHO-G experience unforgettable.",
+        },
+    ];
+
     return (
-        <>
-            <main>
+        <main className="w-full overflow-hidden bg-[#F8F4EA] text-[#061714]">
 
-                {/* Hero Section */}
-                <section>
+            {/* =====================================================
+                HERO
+            ====================================================== */}
+            <section className="relative">
 
-                    <div className="grid grid-cols-1 gap-0.5 md:grid-cols-2 md:gap-10">
+                <div className="grid min-h-[650px] grid-cols-1 lg:grid-cols-2">
 
-                        {/* Image */}
-                        <div className="image-sec">
-                            <img
-                                src={blogHero1}
-                                alt=""
-                                className="h-[300px] w-full object-cover sm:h-[400px] md:h-[450px]"
-                            />
-                        </div>
+                    {/* Left Content */}
+                    <div className="flex items-center bg-[#061714] px-6 py-20 sm:px-10 md:px-16 lg:px-20 xl:px-28">
 
+                        <div className="max-w-xl">
 
-                        {/* Content */}
-                        <div className="flex flex-col items-center justify-center px-5 py-12 text-center sm:px-8 md:px-10">
-
-                            <span className="mb-6 uppercase text-slate-500 sm:mb-8 md:mb-10">
-                                The art of earls
-                            </span>
-
-                            <h1 className="mb-6 text-3xl font-serif font-semibold text-[#0c2340] sm:mb-8 sm:text-4xl md:mb-10">
-                                The Art of Earls
-                            </h1>
-
-                            <p className="max-w-xl px-2 py-2 text-center font-medium text-slate-500 sm:px-6 sm:py-4 md:px-8">
-                                We believe that art enriches the design of a space, this is why we partner with local artists in our communities to create a unique personality for our stores.
+                            <p className="mb-5 text-xs font-bold uppercase tracking-[0.3em] text-[#E5A62A] sm:text-sm">
+                                NACHO-G Journal
                             </p>
 
+                            <h1 className="font-serif text-5xl font-bold leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl">
+                                Stories
+                                <br />
+                                worth
+                                <br />
+                                sharing.
+                            </h1>
+
+                            <div className="mt-8 h-px w-24 bg-[#E5A62A]" />
+
+                            <p className="mt-8 max-w-lg text-sm leading-7 text-white/65 sm:text-base sm:leading-8">
+                                Discover the stories, flavours, people and
+                                moments that make NACHO-G more than just a
+                                restaurant.
+                            </p>
+
+                            <Link
+                                to="/menu"
+                                className="mt-8 inline-flex items-center gap-3 border-b border-[#E5A62A] pb-2 text-sm font-bold uppercase tracking-wider text-[#E5A62A] transition hover:text-white hover:border-white"
+                            >
+                                Explore Our Menu
+                                <FaArrowRight />
+                            </Link>
+
                         </div>
 
                     </div>
 
 
-                    {/* Latest Section */}
-                    <div className="flex flex-col items-center justify-center bg-[#648E71] px-5 py-12 text-center text-white sm:px-8 sm:py-16 md:py-20">
+                    {/* Hero Image */}
+                    <div className="relative h-[450px] lg:h-auto">
 
-                        <span className="mb-6 uppercase sm:mb-8 md:mb-10">
-                            in the know
-                        </span>
+                        <img
+                            src={blogHero1}
+                            alt="NACHO-G restaurant experience"
+                            className="h-full w-full object-cover"
+                        />
 
-                        <h1 className="mb-6 text-3xl uppercase sm:mb-8 sm:text-4xl md:mb-10">
-                            The latest from Earls
-                        </h1>
+                        <div className="absolute inset-0 bg-black/10" />
 
-                        <p className="max-w-2xl px-2 py-2 font-medium sm:px-6 sm:py-4 md:px-8">
-                            Want to know what we’re up to these days? Well, you came to the right place. Read on to learn all about us.
-                        </p>
+                        <div className="absolute bottom-6 left-6 rounded-full bg-[#E5A62A] px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#061714] sm:bottom-10 sm:left-10">
+                            NACHO-G Stories
+                        </div>
 
                     </div>
 
-                </section>
+                </div>
+
+            </section>
 
 
-                {/* Blog Section */}
-                <section className="bg-slate-200">
+            {/* =====================================================
+                INTRO
+            ====================================================== */}
+            <section className="px-5 py-20 sm:px-8 md:py-28">
 
-                    <div className="blog-container px-4 py-8 sm:px-6 sm:py-10 md:p-10">
+                <div className="mx-auto max-w-4xl text-center">
 
-                        <div className="flex flex-col gap-8 sm:gap-10 md:gap-20 md:p-5 lg:p-10">
+                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#B66A28]">
+                        From Our Table
+                    </p>
 
-                            {BlogData.map((blog, index) => {
+                    <h2 className="mt-4 font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                        Food, people
+                        <br />
+                        & good stories.
+                    </h2>
 
-                                const isEven = index % 2 === 0;
+                    <p className="mx-auto mt-7 max-w-2xl text-sm leading-7 text-[#555] sm:text-base sm:leading-8">
+                        From what's happening behind the scenes to the food
+                        landing on your table, this is where we share a little
+                        more about the NACHO-G experience.
+                    </p>
 
-                                return (
+                </div>
 
-                                    <div
-                                        key={blog.id}
-                                        className={`flex flex-col items-center bg-white p-5 sm:p-6 md:gap-8 md:p-8 lg:p-10 ${isEven
-                                                ? "md:flex-row"
-                                                : "md:flex-row-reverse"
-                                            }`}
-                                    >
-
-                                        {/* Blog Image */}
-                                        <div className="image-sec w-full md:w-1/2">
-
-                                            <img
-                                                src={blog.image}
-                                                alt={blog.title}
-                                                className="h-[280px] w-full object-cover sm:h-[350px] md:h-[400px]"
-                                            />
-
-                                        </div>
+            </section>
 
 
-                                        {/* Blog Content */}
-                                        <div className="content-sec w-full pt-8 text-start sm:pt-10 md:w-1/2 md:pt-0 md:pl-5 lg:pl-8">
+            {/* =====================================================
+                FEATURED STORY
+            ====================================================== */}
+            <section className="px-4 pb-20 sm:px-8 md:pb-28">
 
-                                            <p className="tracking-wider text-[#12313b] uppercase">
-                                                {blog.date}
-                                            </p>
+                <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-[#E9E2D2] lg:grid-cols-2">
+
+                    {/* Image */}
+                    <div className="h-[400px] lg:h-[550px]">
+
+                        <img
+                            src={blogHero2}
+                            alt="NACHO-G food"
+                            className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                        />
+
+                    </div>
 
 
-                                            <h1 className="max-w-xl pt-5 pb-5 text-2xl font-serif font-medium text-[#12313b] sm:pt-7 sm:pb-7 sm:text-3xl md:pt-8 md:pb-8">
-                                                {blog.title}
-                                            </h1>
+                    {/* Content */}
+                    <div className="flex flex-col justify-center px-7 py-12 sm:px-10 md:px-14 lg:px-16">
+
+                        <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#B66A28]">
+                            Featured Story
+                        </p>
+
+                        <h2 className="mt-5 font-serif text-4xl font-bold leading-tight sm:text-5xl">
+                            Good food.
+                            <br />
+                            Great stories.
+                        </h2>
+
+                        <p className="mt-6 text-sm leading-7 text-[#555] sm:text-base sm:leading-8">
+                            At NACHO-G, every plate has a little story behind
+                            it. From fresh ingredients to the people who bring
+                            everything together, discover what makes our food
+                            special.
+                        </p>
+
+                        <Link
+                            to="/menu"
+                            className="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-[#061714] px-7 py-4 text-xs font-bold uppercase tracking-wider text-white transition duration-300 hover:bg-[#E5A62A] hover:text-[#061714]"
+                        >
+                            Discover Our Food
+                            <FaArrowRight />
+                        </Link>
+
+                    </div>
+
+                </div>
+
+            </section>
 
 
-                                            <p className="mb-6 max-w-xl pr-0 font-sans text-sm leading-relaxed text-[#12313b] sm:text-base md:pr-5 lg:pr-10">
-                                                {blog.discription}
-                                            </p>
+            {/* =====================================================
+                BLOG LIST
+            ====================================================== */}
+            <section className="bg-[#061714] px-4 py-20 sm:px-8 md:py-28">
+
+                <div className="mx-auto max-w-7xl">
+
+                    {/* Heading */}
+                    <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
+                        <div>
+
+                            <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E5A62A]">
+                                Latest Stories
+                            </p>
+
+                            <h2 className="mt-4 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+                                What's happening
+                                <br />
+                                at NACHO-G?
+                            </h2>
+
+                        </div>
+
+                        <Link
+                            to="/gallery"
+                            className="flex w-fit items-center gap-2 text-sm font-bold uppercase tracking-wider text-white underline decoration-[#E5A62A] underline-offset-8 transition hover:text-[#E5A62A]"
+                        >
+                            Visit Our Gallery
+                            <FaArrowRight />
+                        </Link>
+
+                    </div>
 
 
-                                            <a
-                                                href={blog.link || "#"}
-                                                className="border-b border-[#12313b] pb-0.5 text-sm text-[#12313b] transition-opacity hover:opacity-75"
-                                            >
-                                                Read More &rarr;
-                                            </a>
+                    {/* Blog Cards */}
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 
-                                        </div>
+                        {BlogData.map((blog) => (
+
+                            <article
+                                key={blog.id}
+                                className="group overflow-hidden rounded-[1.5rem] bg-[#F8F4EA]"
+                            >
+
+                                {/* Image */}
+                                <div className="relative h-[280px] overflow-hidden sm:h-[350px]">
+
+                                    <img
+                                        src={blog.image}
+                                        alt={blog.title}
+                                        className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                                    />
+
+                                    {/* Category */}
+                                    <div className="absolute left-5 top-5 rounded-full bg-[#E5A62A] px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-[#061714]">
+                                        {blog.category}
+                                    </div>
+
+                                </div>
+
+
+                                {/* Content */}
+                                <div className="p-6 sm:p-8">
+
+                                    {/* Date */}
+                                    <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#888]">
+
+                                        <FaCalendarAlt className="text-[#B66A28]" />
+
+                                        {blog.date}
 
                                     </div>
 
-                                );
 
-                            })}
+                                    <h3 className="mt-5 font-serif text-2xl font-bold leading-tight text-[#061714] sm:text-3xl">
+                                        {blog.title}
+                                    </h3>
 
-                        </div>
+
+                                    <p className="mt-4 text-sm leading-7 text-[#666]">
+                                        {blog.description}
+                                    </p>
+
+
+                                    <button
+                                        type="button"
+                                        className="mt-6 inline-flex items-center gap-3 border-b border-[#061714] pb-1 text-xs font-bold uppercase tracking-wider text-[#061714] transition hover:border-[#E5A62A] hover:text-[#B66A28]"
+                                    >
+                                        Read Story
+                                        <FaArrowRight />
+                                    </button>
+
+                                </div>
+
+                            </article>
+
+                        ))}
 
                     </div>
 
-                </section>
+                </div>
 
-            </main>
-        </>
-    )
-}
+            </section>
+
+
+            {/* =====================================================
+                INSTAGRAM / SOCIAL
+            ====================================================== */}
+            <section className="bg-[#E9E2D2] px-5 py-20 text-center sm:px-8 md:py-24">
+
+                <div className="mx-auto max-w-3xl">
+
+                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#B66A28]">
+                        Follow The Vibe
+                    </p>
+
+                    <h2 className="mt-4 font-serif text-4xl font-bold sm:text-5xl">
+                        More NACHO-G.
+                        <br />
+                        More good times.
+                    </h2>
+
+                    <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#666] sm:text-base">
+                        Follow us for new dishes, special moments, offers and
+                        everything happening at NACHO-G.
+                    </p>
+
+
+                    <div className="mt-8 flex justify-center gap-4">
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#061714] text-white transition duration-300 hover:bg-[#E5A62A] hover:text-[#061714]"
+                        >
+                            <FaInstagram />
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#061714] text-white transition duration-300 hover:bg-[#E5A62A] hover:text-[#061714]"
+                        >
+                            <FaFacebookF />
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="YouTube"
+                            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#061714] text-white transition duration-300 hover:bg-[#E5A62A] hover:text-[#061714]"
+                        >
+                            <FaYoutube />
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =====================================================
+                FINAL CTA
+            ====================================================== */}
+            <section className="bg-[#061714] px-5 py-20 text-center text-white sm:px-8 md:py-28">
+
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#E5A62A]">
+                    Come Hungry
+                </p>
+
+                <h2 className="mx-auto mt-4 max-w-3xl font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                    The best stories
+                    <br />
+                    start around a table.
+                </h2>
+
+                <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/60 sm:text-base">
+                    Ready for your next NACHO-G experience?
+                </p>
+
+                <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+
+                    <Link
+                        to="/menu"
+                        className="rounded-full bg-[#E5A62A] px-8 py-4 text-sm font-bold uppercase tracking-wider text-[#061714] transition duration-300 hover:bg-white"
+                    >
+                        Explore Menu
+                    </Link>
+
+                    <Link
+                        to="/contact"
+                        className="rounded-full border border-white/40 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition duration-300 hover:bg-white hover:text-[#061714]"
+                    >
+                        Visit NACHO-G
+                    </Link>
+
+                </div>
+
+            </section>
+
+        </main>
+    );
+};
+
 export default Blogs;

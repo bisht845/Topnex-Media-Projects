@@ -5,8 +5,9 @@ import About from "./pages/About"
 import Blogs from "./pages/Blogs"
 import BlogsDetail from "./pages/BlogsDetail"
 import Contact from "./pages/Contact"
-import Carrer from "./pages/Carrer"
+import Menu from "./pages/Menu"
 import Layout from './components/Layout'
+import Gallery from './pages/Gallery'
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
                   <Route path='/about' element={<About />} />
                   <Route path='/blogs' element={<Blogs />} />
                   <Route path='/blogsdetail/:Id' element={<BlogsDetail />} />
-                  <Route path='/carrer' element={<Carrer />} />
+                  <Route path='/menu' element={<Menu />} />
+                  <Route path='/gallery' element={<Gallery />} />
                   <Route path='/contact' element={<Contact />} />
               </Route>
           </Routes>
