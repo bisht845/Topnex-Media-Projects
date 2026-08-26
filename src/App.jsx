@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/nachoggkp.com">
+      <BrowserRouter>
           <Routes>
               <Route path='/' element={<Layout />}>
                   <Route index element={<Home />} />
