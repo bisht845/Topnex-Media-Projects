@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/Topnex-Media-Projects/',
+  base: 'nachoggkp.com',
 })
