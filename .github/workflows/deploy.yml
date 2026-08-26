@@ -43,14 +43,18 @@ jobs:
           path: ./dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
-    needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 First ninety five, you can just bring and drop a pipe using reactor next year and your fun take away from deployment or deploying the full step flavor tab will be of delivered and srsty companies. One step by step by comment full guide free to deploy a website andsource tutorial to connect terminally registered with any made registration company. So at the end of the video, you're not exactly how you see where your website is live by default they will be using a GitHub subdomain. If we click on my website, it is a very basic static page that I've created just for this video to now it's add a custom domain. So here on GitHub pages you need to scroll down to custom domain. What we can do is we can go ahead and find that domain. For me, mine is where I log it and find it in case here in the back end of my domain now my domain is called knowledgebasevideo, so we'll go to get open in here we'll do www dot in for the DNS. Now we need to add some DNS record to connect it. This is fairly easy today's way you do that. So now we want to click on learn more about configuring custom DNA, and that will open up the info page of GitHub where we'll tell you how to do it. You then want to scroll down to managing your custom domain, and here we want to add these following A records and also C records. So scroll down configure in here it will show you four different A records which we need to have. So let's bare than copy the first one and then we'll head over to the Ship Street we can then go to Manic record and here we can add a new DNS record now if you already have an A record in your DNS records that you want to then calculate on a record and that will add it. I will do the same for these just confirm any R stages finally we'll add the third one and then we'll go ahead and add default here. So now we turn you should have four A records there we go just like that so now let's go on to the next step so now we need to do we need to go ahead and scroll down and we need to add some C name records here you're looking for second number five and configuring a sub domin and what we can do is we can add one Cna record so you need to add aCDM record which point to your username github the high so break that down go to your domain or go type we'll go sense on or you can type www and then for those armed you want to find your user and you don't put the target as your username github io so we'll go back here and we'll find my username which is knowledge base yt so in the target here I'm going to write my username which is knowledge base ythob iofor I've done that we can click on record and then enter it out that C name record successfully so now it has done that we can have our head again so we're going to go back and domain you can see DNS check successful so now let's try it so your size lives click on the flink and the you go is working now don't record successfully so now it has done that and we can have no shipphilosopher phispome
+        uses: actions/deploy-pages@v4
