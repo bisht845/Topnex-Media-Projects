@@ -2,10 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import HeroImg from "../assets/Hero_img.jpg";
-import catImg1 from "../assets/cat-img1.jpeg";
-import catImg2 from "../assets/cat-img2.jpeg";
 import Kitchen_Garnish from "../assets/Kitchen_Garnish_.jpg";
-import Service_1 from "../assets/Service-1.jpg";
 import Service_2 from "../assets/Service-2.jpg";
 
 const popularItems = [
@@ -13,25 +10,26 @@ const popularItems = [
     name: "Chilli Paneer",
     price: "₹269",
     description: "Crispy paneer tossed with chilli, peppers and our signature sauce.",
-    image: catImg1,
+     image:
+      "https://images.unsplash.com/photo-1642821369314-100fece91d3c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Veg Manchurian",
     price: "₹249",
     description: "Crispy vegetable bites finished with a delicious Indo-Chinese glaze.",
-    image: catImg2,
+    image: "https://images.unsplash.com/photo-1676976197902-4a01ee87cd78?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Veg Fried Rice",
     price: "₹199",
     description: "Aromatic rice wok-tossed with fresh vegetables and bold flavours.",
-    image: Kitchen_Garnish,
+    image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=85",
   },
   {
     name: "Honey Chilli Potato",
     price: "₹239",
     description: "Crispy golden potatoes coated with sweet honey and spicy chilli.",
-    image: Service_1,
+    image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
   },
 ];
 

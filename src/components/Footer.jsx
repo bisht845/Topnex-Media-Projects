@@ -294,9 +294,18 @@ const Footer = () => {
 
                 <div className="flex flex-col gap-4 text-center text-xs sm:flex-row sm:items-center sm:justify-between sm:text-left">
 
-                    <p className="text-white/30">
-                        © {currentYear} NACHO G — The Dining Space.
-                        All Rights Reserved.
+                    <p className="text-sm">
+                        © 2026 NACHO G — The Dining Space.  All Rights Reserved.
+                        <span className="mx-2">|</span>
+                        Designed & Developed by{" "}
+                        <a
+                            href="https://topnexmedia.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold hover:underline"
+                        >
+                            Topnex Media
+                        </a>
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-5 sm:justify-end">
