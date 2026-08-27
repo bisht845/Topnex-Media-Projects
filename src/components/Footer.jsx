@@ -10,7 +10,7 @@ import {
     FaEnvelope,
     FaLocationDot,
 } from "react-icons/fa6";
-
+import logo from "../assets/logo.png"
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -25,13 +25,14 @@ const Footer = () => {
                             to="/"
                             className="inline-block"
                         >
-                            <h2 className="font-serif text-4xl tracking-widest text-[#D7AE4D]">
+                            {/* <h2 className="font-serif text-4xl tracking-widest text-[#D7AE4D]">
                                 NACHO G
                             </h2>
 
                             <p className="mt-1 text-xs uppercase tracking-[0.35em] text-white/50">
                                 The Dining Space
-                            </p>
+                            </p> */}
+                            <img src={logo} alt=""  className="w-full h-40"/>
                         </Link>
 
                         <p className="mt-6 max-w-xs text-sm leading-7 text-white/50">
@@ -144,58 +145,6 @@ const Footer = () => {
 
                     </div>
 
-
-                    {/* =================================================
-                        OPENING HOURS
-                    ================================================= */}
-
-                    {/* <div>
-
-                        <h3 className="font-serif text-xl text-[#D7AE4D]">
-                            Opening Hours
-                        </h3>
-
-                        <div className="mt-5 space-y-4 text-sm">
-
-                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
-                                <span className="text-white/50">
-                                    Monday - Thursday
-                                </span>
-
-                                <span className="text-white/80">
-                                    12 PM - 11 PM
-                                </span>
-                            </div>
-
-                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
-                                <span className="text-white/50">
-                                    Friday - Saturday
-                                </span>
-
-                                <span className="text-white/80">
-                                    12 PM - 12 AM
-                                </span>
-                            </div>
-
-                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
-                                <span className="text-white/50">
-                                    Sunday
-                                </span>
-
-                                <span className="text-white/80">
-                                    12 PM - 10:30 PM
-                                </span>
-                            </div>
-
-                        </div>
-
-                        <p className="mt-5 text-xs leading-5 text-[#D7AE4D]">
-                            Kitchen closes 30 minutes before closing time.
-                        </p>
-
-                    </div> */}
-
-
                     {/* =================================================
                         CONTACT
                     ================================================= */}
@@ -235,7 +184,7 @@ const Footer = () => {
                                     </p>
 
                                     <p className="mt-1 text-sm text-white/70 transition group-hover:text-[#D7AE4D]">
-                                        info@nachog.com
+                                        info@nachoggkp.com
                                     </p>
                                 </div>
                             </a>
@@ -249,13 +198,63 @@ const Footer = () => {
                                     </p>
 
                                     <p className="mt-1 text-sm leading-6 text-white/70">
-                                        Gorakhpur, Uttar Pradesh 273013
+                                        Saraiya Bazar, Sarai Gulharia,  Gorakhpur, Uttar Pradesh 273013
                                     </p>
                                 </div>
 
                             </div>
 
                         </div>
+
+                    </div>
+
+                      {/* =================================================
+                        OPENING HOURS
+                    ================================================= */}
+
+                    <div>
+
+                        <h3 className="font-serif text-xl text-[#D7AE4D]">
+                            Opening Hours
+                        </h3>
+
+                        <div className="mt-5 space-y-4 text-sm">
+
+                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
+                                <span className="text-white/50">
+                                    Monday - Thursday
+                                </span>
+
+                                <span className="text-white/80">
+                                    10 AM - 11 PM
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
+                                <span className="text-white/50">
+                                    Friday - Saturday
+                                </span>
+
+                                <span className="text-white/80">
+                                    10 AM - 11 PM
+                                </span>
+                            </div>
+
+                            <div className="flex justify-between gap-5 border-b border-white/10 pb-3">
+                                <span className="text-white/50">
+                                    Sunday
+                                </span>
+
+                                <span className="text-white/80">
+                                    10 AM - 11:30 PM
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <p className="mt-5 text-xs leading-5 text-[#D7AE4D]">
+                            Kitchen closes 10 minutes before closing time.
+                        </p>
 
                     </div>
 

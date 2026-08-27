@@ -128,7 +128,7 @@ const Contact = () => {
 
                     </a>
 
-                    <a className="group border border-[#D7AE4D]/20 bg-[#071412] p-7 text-center transition duration-300 hover:-translate-y-2 hover:border-[#D7AE4D]" href="mailto:info@nachog.com">
+                    <a className="group border border-[#D7AE4D]/20 bg-[#071412] p-7 text-center transition duration-300 hover:-translate-y-2 hover:border-[#D7AE4D]" href="mailto:info@nachoggkp.com">
 
                         <div className="mx-auto flex h-14 w-14 items-center justify-center border border-[#D7AE4D]/40 text-[#D7AE4D] transition group-hover:bg-[#D7AE4D] group-hover:text-black">
 
@@ -148,7 +148,7 @@ const Contact = () => {
                             href="mailto:hello@nachog.com"
                             className="mt-4 block break-all text-sm text-white/50 transition hover:text-[#D7AE4D]"
                         >
-                            info@nachog.com
+                            info@nachoggkp.com
                         </a>
 
                     </a>
